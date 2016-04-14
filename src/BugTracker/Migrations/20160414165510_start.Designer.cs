@@ -8,9 +8,10 @@ using BugTracker.Models;
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160414165510_start")]
+    partial class start
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -69,15 +70,15 @@ namespace BugTracker.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Date");
-
-                    b.Property<string>("Description");
+                    b.Property<DateTime>("DateTime");
 
                     b.Property<bool>("IsResolved");
 
                     b.Property<string>("Severity");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("description");
 
                     b.HasKey("Id");
                 });

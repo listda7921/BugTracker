@@ -57,7 +57,7 @@ namespace BugTracker
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
             services.AddScoped<BugRepository>();
-            //services.AddScoped<BugService>();
+            services.AddScoped<BugService>();
 
 
             // convert Pascal to Camel
