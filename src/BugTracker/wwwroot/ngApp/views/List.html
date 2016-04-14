@@ -8,7 +8,7 @@
         <td>Date created</td>
       </tr>
       
-        <tr ng-repeat="bug in controller.bugList" class="listdata" data-toggle="modal" data-target="#myModal")>
+        <tr  id="$index" ng-click="controller.addCurrent($index)" ng-repeat="bug in controller.bugList" class="listdata" data-toggle="modal" data-target="#myModal" >
           <td>{{bug.severity}}</td>
           <td>{{bug.title}}</td>
           <td>{{bug.date}}</td>
@@ -16,7 +16,10 @@
     </table>
   </div>
 </div>
-
+<span>{{controller.current}}</span>
+<ul>
+  <li ng-repeat="bug in controller.bugList">{{bug}}</li>
+</ul>
 <div class="container">
 
   <!-- Modal -->
@@ -27,14 +30,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">{{controller.bugList[0].title}}</h4>
+          <h4 class="modal-title">{{controller.current.title}}</h4>
         </div>
         <div class="modal-body">
-          <h4>Bug Description:</h4>
-          <p>{{controller.bugList[0].description}}</p>
+          <p>{{controller.current.description}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="controller.resolve()">Resolve</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -43,3 +44,4 @@
   </div>
 
 </div>
+

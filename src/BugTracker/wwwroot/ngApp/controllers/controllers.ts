@@ -2,16 +2,21 @@ namespace BugTracker.Controllers {
 
     export class HomeController {
         public bugList;
+        public current;
         constructor(private $http: ng.IHttpService, private $state: ng.ui.IStateService) {
             $http.get("/api/bugs")
                 .then((response) => {
                     this.bugList = response.data;
                 })
         }
+        addCurrent(idx) {
+            this.current = this.bugList[idx];
+        }
 
         resolve() {
             this.bugList[0].IsResolved == true;
             this.$state.go('resolved');
+            //this.$http.put()
 
         }
     }
