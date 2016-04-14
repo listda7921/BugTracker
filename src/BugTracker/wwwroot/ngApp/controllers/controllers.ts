@@ -1,7 +1,29 @@
 namespace BugTracker.Controllers {
 
     export class HomeController {
-        public message = 'Hello from the home page!';
+        public bugList;
+        constructor(private $http: ng.IHttpService) {
+            $http.get("/api/bugs")
+                .then((response) => {
+                    this.bugList = response.data;
+                })
+        }
+    }
+
+    export class CreateController {
+        public createdItem;
+        public title;
+        public description;
+        public severity;
+        
+        constructor(private $http: ng.IHttpService) {
+            $http.post("/api/bugs", {
+                title: this.title,
+                description: this.description,
+                severity: this.severity
+
+            })
+        }
     }
 
 

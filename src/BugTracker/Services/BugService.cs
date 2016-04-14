@@ -1,4 +1,5 @@
 ﻿using BugTracker.Infrastructure;
+using BugTracker.Models;
 using BugTracker.Services.Models;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,20 @@ namespace BugTracker.Services
                         IsResolved = b.IsResolved,
                         Severity = b.Severity
                     }).ToList();
+        }
+
+        public void AddBug(BugDTO bugDTO)
+        {
+            Bug bug = new Bug
+            {
+                Title = bugDTO.Title,
+                Description = bugDTO.Description,
+                Date = DateTime.Now,
+                IsResolved = bugDTO.IsResolved,
+                Severity = bugDTO.Severity
+            };
+            _bugRepo.Add(bug);
+            _bugRepo.SaveChanges();
         }
     }
 }

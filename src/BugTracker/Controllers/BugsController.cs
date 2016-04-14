@@ -27,6 +27,14 @@ namespace BugTracker.Controllers
             return _bugServ.GetBugList().ToList();
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody]BugDTO bugDTO)
+        {
+ 
+            return Ok();
+        }
+
+
         
     }
 }
