@@ -19,6 +19,24 @@ namespace BugTracker {
                 controller: BugTracker.Controllers.SecretController,
                 controllerAs: 'controller'
             })
+            .state('create', {
+                url: '/create',
+                templateUrl: '/ngApp/views/Create.html',
+                //controller: BugTracker.Controllers,
+                controllerAs: 'controller'
+            })
+            .state('resolved', {
+                url: '/resolved',
+                templateUrl: '/ngApp/views/Resolved.html',
+                //controller: BugTracker.Controllers,
+                controllerAs: 'controller'
+            })
+            .state('list', {
+                url: '/list',
+                templateUrl: '/ngApp/views/List.html',
+                //controller: BugTracker.Controllers,
+                controllerAs: 'controller'
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: '/ngApp/views/login.html',

@@ -1,0 +1,45 @@
+﻿<h2>Current Bugs:</h2>
+<div class="flex-container">
+  <div class="flex-item">
+    <table>
+      <tr id="header">
+        <td>Severity</td>
+        <td>Title</td>
+        <td>Date created</td>
+      </tr>
+      
+        <tr class="listdata" data-toggle="modal" data-target="#myModal" >
+          <td>{{bug.severity}}really bad</td>
+          <td>{{bug.title}}olas bug</td>
+          <td>{{bug.date}}tomorrow</td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{{controller.title}}</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Bug Description:</h4>
+          <p>{{controller.description}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="controller.resolve()">Resolve</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

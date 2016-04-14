@@ -1,4 +1,36 @@
-flex-container {
+.flex-container {
   display: flex;
-  justify-content:center;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction:row;
+  height: 60vh;
+}
+td {
+  padding: 10px;
+  border-left: 2px solid #eee;
+  border-top: 1px solid #eee;
+}
+#header td{
+  background: #eee;
+  border: 1px solid white;
+}
+.listdata:hover {
+  background-color: #eee;
+}
+a{
+  color: black;
+}
+.flex-container-create {
+    display: flex;
+  justify-content: space-around;
+  align-items:center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction:column;
+  height: 60vh;
+}
+.flex-item-submit{
+  align-self: center;
 }
