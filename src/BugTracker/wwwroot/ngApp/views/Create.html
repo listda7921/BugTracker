@@ -11,13 +11,13 @@
       </tr>
 
       <tr class="listdata" data-toggle="modal" data-target="#myModal">
-        <td><input placeholder="Title" /></td>
-        <td><input placeholder="Description" /></td>
+        <td><input ng-model="controller.title" placeholder="Title" /></td>
+        <td><input ng-model="controller.description" placeholder="Description" /></td>
         <td>
-          <select>
-            <option style="background: blue;">Low</option>
-            <option style="background: yellow;">Medium</option>
-            <option style="background: red;">High</option>
+          <select ng-model="controller.severity">
+            <option style="background: blue;" value="Low">Low</option>
+            <option style="background: yellow;" value="Medium">Medium</option>
+            <option style="background: red;" value="High">High</option>
           </select>
         </td>
       </tr>
@@ -25,6 +25,6 @@
 
   </div>
   <div class="flex-item-submit">
-    <button class="btn btn-default">Submit</button>
+    <button class="btn btn-default" ng-click="controller.submit()">Submit</button>
   </div>
 </div>

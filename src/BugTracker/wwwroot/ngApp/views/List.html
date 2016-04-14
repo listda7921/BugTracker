@@ -8,10 +8,10 @@
         <td>Date created</td>
       </tr>
       
-        <tr class="listdata" data-toggle="modal" data-target="#myModal" >
-          <td>{{bug.severity}}really bad</td>
-          <td>{{bug.title}}olas bug</td>
-          <td>{{bug.date}}tomorrow</td>
+        <tr ng-repeat="bug in controller.bugList" class="listdata" data-toggle="modal" data-target="#myModal")>
+          <td>{{bug.severity}}</td>
+          <td>{{bug.title}}</td>
+          <td>{{bug.date}}</td>
         </tr>
     </table>
   </div>
@@ -27,11 +27,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">{{controller.title}}</h4>
+          <h4 class="modal-title">{{controller.bugList[0].title}}</h4>
         </div>
         <div class="modal-body">
           <h4>Bug Description:</h4>
-          <p>{{controller.description}}</p>
+          <p>{{controller.bugList[0].description}}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="controller.resolve()">Resolve</button>

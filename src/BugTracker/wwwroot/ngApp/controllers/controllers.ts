@@ -2,11 +2,17 @@ namespace BugTracker.Controllers {
 
     export class HomeController {
         public bugList;
-        constructor(private $http: ng.IHttpService) {
+        constructor(private $http: ng.IHttpService, private $state: ng.ui.IStateService) {
             $http.get("/api/bugs")
                 .then((response) => {
                     this.bugList = response.data;
                 })
+        }
+
+        resolve() {
+            this.bugList[0].IsResolved == true;
+            this.$state.go('resolved');
+
         }
     }
 
@@ -17,7 +23,12 @@ namespace BugTracker.Controllers {
         public severity;
         
         constructor(private $http: ng.IHttpService) {
-            $http.post("/api/bugs", {
+            
+        }
+
+        submit() {
+            console.log('im posting!');
+            this.$http.post("/api/bugs", {
                 title: this.title,
                 description: this.description,
                 severity: this.severity

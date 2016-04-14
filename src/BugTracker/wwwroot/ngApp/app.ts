@@ -22,7 +22,7 @@ namespace BugTracker {
             .state('create', {
                 url: '/create',
                 templateUrl: '/ngApp/views/Create.html',
-                //controller: BugTracker.Controllers,
+                controller: BugTracker.Controllers.CreateController,
                 controllerAs: 'controller'
             })
             .state('resolved', {
@@ -34,7 +34,7 @@ namespace BugTracker {
             .state('list', {
                 url: '/list',
                 templateUrl: '/ngApp/views/List.html',
-                //controller: BugTracker.Controllers,
+                controller: BugTracker.Controllers.HomeController,
                 controllerAs: 'controller'
             })
             .state('login', {

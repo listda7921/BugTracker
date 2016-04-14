@@ -30,7 +30,7 @@ namespace BugTracker.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]BugDTO bugDTO)
         {
- 
+            _bugServ.AddBug(bugDTO);
             return Ok();
         }
 
