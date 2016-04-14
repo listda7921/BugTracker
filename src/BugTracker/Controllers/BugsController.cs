@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using BugTracker.Services;
+using BugTracker.Services.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,10 +22,18 @@ namespace BugTracker.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ICollection<BugDTO> GetAllBugs()
         {
-            return new string[] { "value1", "value2" };
+            return _bugServ.GetBugList().ToList();
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody]BugDTO bugDTO)
+        {
+ 
+            return Ok();
+        }
+
 
         
     }
