@@ -5,38 +5,49 @@
     <base href="/" />
   <link href="~/css/site.css" rel="stylesheet" />
   <link href="~/lib/materialize/dist/css/materialize.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body >
   <nav class="z-depth-1 light-green accent-3">
     <div class="nav-wrapper">
-      <a class="brand-logo left">Smart Fridge</a>
+      <a class="brand-logo left" ui-sref="home">Bug Tracker</a>
       <ul class="right">
-        <li><a>View Fridge</a></li>
-        <li ui-sref="create"><a>Add Item</a></li>
+        <li><a ui-sref="list">View Bugs</a></li>
+        <li ><a ui-sref="create">Add Item</a></li>
         <li><a ui-sref="login">Log In</a></li>
       </ul>
     </div>
   </nav>
-    <div class="container">
-        <ui-view></ui-view>
+  <div class="container valign-wrapper">
+    <div class="valign">
+      <ui-view></ui-view>
     </div>
+  </div>
+    
   <footer class="page-footer light-green accent-3 z-depth-1">
     <div class="container-footer">
       <div class="row footer">
         <div class="col s4">
-          <a class="material-icons">view_list</a>
-          <br>
-          <h6 class="white-text">View Items</h6>
+          <a ui-sref="list">
+            <i class="material-icons">view_list</i>
+            <br>
+            <h6 class="white-text">View Items</h6>
+          </a>
         </div>
         <div class="col s4">
-          <a class="material-icons">library_add</a>
-          <br>
-          <h6 class="white-text">Add Items</h6>
+          <a ui-sref="create">
+            <i class="material-icons">library_add</i>
+            <br>
+            <h6 class="white-text">Add Items</h6>
+          </a>
         </div>
         <div class="col s4">
-          <a class="material-icons">vpn_key</a>
-          <br>
-          <h6 class="white-text">Log In</h6>
+          <a ui-sref="login">
+            <i class="material-icons">vpn_key</i>
+            <br>
+            <h6 class="white-text">Log In</h6>
+          </a>
         </div>
       </div>
     </div>
